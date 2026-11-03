@@ -27,6 +27,18 @@
             android:name=".LoginActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="com.example.oel1.HomeActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.oel1.RegisterStudentActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.oel1.StudentDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.oel1.StudentListActivity"
+            android:exported="false" />
     </application>
 
 </manifest>
