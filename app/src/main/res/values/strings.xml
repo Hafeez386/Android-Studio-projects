@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Layout Explorer</string>
+    <string name="title_main">Android Layouts Explorer</string>
+    <string name="subtitle_main">Select a layout type to see an interactive code &amp; UI example</string>
+
+    <string name="title_linear_layout">LinearLayout</string>
+    <string name="desc_linear_layout">Organizes UI elements in a single direction (vertical or horizontal) with weighted distribution support.</string>
+
+    <string name="title_relative_layout">RelativeLayout</string>
+    <string name="desc_relative_layout">Positions child views relative to parent boundaries or relative to sibling views.</string>
+
+    <string name="title_constraint_layout">ConstraintLayout</string>
+    <string name="desc_relative_constraint">Modern flexible layout system with constraints, guidelines, chains, and ratio support.</string>
+
+    <string name="title_frame_layout">FrameLayout</string>
+    <string name="desc_frame_layout">Designed to block out an area on screen to display a single item or stack overlaying child views.</string>
+
+    <string name="title_table_layout">TableLayout</string>
+    <string name="desc_table_layout">Arranges views into rows and columns using TableRow elements.</string>
+
+    <string name="title_grid_layout">GridLayout</string>
+    <string name="desc_grid_layout">Places views in a rectangular grid with support for column and row spanning.</string>
+</resources>
