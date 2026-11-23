@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    RelativeLayout:
+    Positions child views relative to their parent container or relative to each other (siblings)
+    using rules such as layout_below, layout_toEndOf, layout_centerInParent, layout_alignParentBottom, etc.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background_light"
+    tools:context=".RelativeLayoutActivity">
+
+    <!-- Header Toolbar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/primary_color"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="16dp">
+
+        <Button
+            android:id="@+id/btnBack"
+            style="@style/Widget.Material3.Button.IconButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="←"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="RelativeLayout Example"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Relative Positioning Demo"
+                android:textColor="@color/text_primary"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <!-- RelativeLayout Demo Card -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="320dp"
+                android:layout_marginTop="12dp"
+                android:background="@color/card_bg"
+                android:elevation="4dp"
+                android:padding="16dp">
+
+                <!-- View 1: Top-Left Header Badge -->
+                <TextView
+                    android:id="@+id/tvTopLeft"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:background="@color/box_blue"
+                    android:padding="10dp"
+                    android:text="Top-Left (Parent)"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+
+                <!-- View 2: Top-Right Status Badge -->
+                <TextView
+                    android:id="@+id/tvTopRight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentTop="true"
+                    android:background="@color/box_green"
+                    android:padding="10dp"
+                    android:text="Top-Right (Parent)"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+
+                <!-- View 3: View Below tvTopLeft -->
+                <TextView
+                    android:id="@+id/tvBelowLeft"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvTopLeft"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/box_orange"
+                    android:padding="10dp"
+                    android:text="Below Top-Left"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+
+                <!-- View 4: View to End of tvBelowLeft -->
+                <TextView
+                    android:id="@+id/tvToEndOf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvTopLeft"
+                    android:layout_toEndOf="@id/tvBelowLeft"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/box_purple"
+                    android:padding="10dp"
+                    android:text="To End of Below-Left"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+
+                <!-- View 5: Center in Parent -->
+                <TextView
+                    android:id="@+id/tvCenter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:background="@color/box_red"
+                    android:padding="12dp"
+                    android:text="Center In Parent"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+
+                <!-- View 6: Align Parent Bottom Left -->
+                <TextView
+                    android:id="@+id/tvBottomLeft"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentStart="true"
+                    android:background="@color/box_teal"
+                    android:padding="10dp"
+                    android:text="Bottom-Left (Parent)"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+
+                <!-- View 7: Align Parent Bottom Right -->
+                <TextView
+                    android:id="@+id/tvBottomRight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentEnd="true"
+                    android:background="@color/purple_500"
+                    android:padding="10dp"
+                    android:text="Bottom-Right (Parent)"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+            <!-- Profile Card Example built with RelativeLayout -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Profile Card (RelativeLayout)"
+                android:textColor="@color/text_primary"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@color/card_bg"
+                android:elevation="3dp"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/tvAvatar"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:background="@color/primary_color"
+                    android:gravity="center"
+                    android:text="JD"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/tvAvatar"
+                    android:layout_marginStart="16dp"
+                    android:text="Jane Doe"
+                    android:textColor="@color/text_primary"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvRole"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvName"
+                    android:layout_toEndOf="@id/tvAvatar"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="4dp"
+                    android:text="Senior Android Engineer"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/btnFollow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:text="Follow" />
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

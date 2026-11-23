@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    TableLayout:
+    Arranges child elements into rows and columns using TableRow containers.
+    Columns can be stretched (android:stretchColumns), collapsed, or spanned (android:layout_span).
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background_light"
+    tools:context=".TableLayoutActivity">
+
+    <!-- Header Toolbar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/primary_color"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="16dp">
+
+        <Button
+            android:id="@+id/btnBack"
+            style="@style/Widget.Material3.Button.IconButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="←"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="TableLayout Example"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Invoice Itemized Statement"
+                android:textColor="@color/text_primary"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <!-- TableLayout Example -->
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@color/card_bg"
+                android:elevation="3dp"
+                android:padding="12dp"
+                android:stretchColumns="0,1,2">
+
+                <!-- Header Row -->
+                <TableRow
+                    android:background="@color/primary_color"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:text="Item Description"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:gravity="center"
+                        android:text="Qty"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:gravity="end"
+                        android:text="Price"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+                </TableRow>
+
+                <!-- Data Row 1 -->
+                <TableRow
+                    android:padding="10dp">
+
+                    <TextView
+                        android:text="Android Phone Case"
+                        android:textColor="@color/text_primary"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:gravity="center"
+                        android:text="2"
+                        android:textColor="@color/text_primary"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:gravity="end"
+                        android:text="$29.98"
+                        android:textColor="@color/text_primary"
+                        android:textSize="14sp" />
+                </TableRow>
+
+                <!-- Divider Line -->
+                <View
+                    android:layout_height="1dp"
+                    android:background="@color/divider_color" />
+
+                <!-- Data Row 2 -->
+                <TableRow
+                    android:padding="10dp">
+
+                    <TextView
+                        android:text="USB-C Fast Charger"
+                        android:textColor="@color/text_primary"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:gravity="center"
+                        android:text="1"
+                        android:textColor="@color/text_primary"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:gravity="end"
+                        android:text="$19.99"
+                        android:textColor="@color/text_primary"
+                        android:textSize="14sp" />
+                </TableRow>
+
+                <!-- Divider Line -->
+                <View
+                    android:layout_height="1dp"
+                    android:background="@color/divider_color" />
+
+                <!-- Data Row 3 -->
+                <TableRow
+                    android:padding="10dp">
+
+                    <TextView
+                        android:text="Screen Protector (2-pack)"
+                        android:textColor="@color/text_primary"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:gravity="center"
+                        android:text="3"
+                        android:textColor="@color/text_primary"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:gravity="end"
+                        android:text="$15.00"
+                        android:textColor="@color/text_primary"
+                        android:textSize="14sp" />
+                </TableRow>
+
+                <!-- Divider Line -->
+                <View
+                    android:layout_height="2dp"
+                    android:background="@color/primary_color" />
+
+                <!-- Spanning Row (Summary Row with layout_span="2") -->
+                <TableRow
+                    android:padding="10dp">
+
+                    <TextView
+                        android:layout_span="2"
+                        android:text="Total Amount Due:"
+                        android:textColor="@color/text_primary"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:gravity="end"
+                        android:text="$64.97"
+                        android:textColor="@color/primary_color"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                </TableRow>
+
+            </TableLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
