@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="#F5F7FA"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp">
+
+        <!-- Profile / Logo ImageView -->
+        <ImageView
+            android:id="@+id/ivProfile"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:contentDescription="Profile Picture"
+            android:src="@drawable/ic_launcher_foreground"
+            android:background="@drawable/ic_launcher_background"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvWelcome"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="Daily Health Tracker"
+            android:textColor="#1A1A1A"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/ivProfile"
+            app:layout_constraintTop_toTopOf="@id/ivProfile" />
+
+        <TextView
+            android:id="@+id/tvSubtitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="Monitor your walking &amp; fitness goals"
+            android:textColor="#666666"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/ivProfile"
+            app:layout_constraintTop_toBottomOf="@id/tvWelcome" />
+
+        <!-- Fitness Activity Banner ImageView -->
+        <ImageView
+            android:id="@+id/ivFitnessBanner"
+            android:layout_width="0dp"
+            android:layout_height="160dp"
+            android:layout_marginTop="24dp"
+            android:contentDescription="Fitness Activity Banner"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_launcher_foreground"
+            android:background="#E1F5FE"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivProfile" />
+
+        <!-- Progress Section Title -->
+        <TextView
+            android:id="@+id/tvGoalTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Daily Walking Progress"
+            android:textColor="#1A1A1A"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivFitnessBanner" />
+
+        <!-- Step Count Text -->
+        <TextView
+            android:id="@+id/tvStepCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="7,500 / 10,000 Steps (75%)"
+            android:textColor="#0288D1"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvGoalTitle" />
+
+        <!-- Daily Goal Horizontal ProgressBar -->
+        <ProgressBar
+            android:id="@+id/progressBarSteps"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="12dp"
+            android:max="10000"
+            android:progress="7500"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvStepCount" />
+
+        <!-- Statistics Info -->
+        <TextView
+            android:id="@+id/tvStats"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Distance: 5.2 km  |  Calories: 340 kcal"
+            android:textColor="#555555"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/progressBarSteps" />
+
+        <!-- Action Button -->
+        <Button
+            android:id="@+id/btnStartTracking"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="32dp"
+            android:text="Start Activity Tracking"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvStats" />
+
+        <!-- Loading ProgressBar (Initially Hidden) -->
+        <ProgressBar
+            android:id="@+id/progressBarLoading"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnStartTracking" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
